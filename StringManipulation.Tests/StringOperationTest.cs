@@ -18,7 +18,33 @@ namespace StringManipulation.Tests
             var result = strOperations.ConcatenateStrings("Hello", "Word");
 
             // Assert = Comprobación del resultado 
+            Assert.NotNull(result);
+            Assert.NotEmpty(result);
             Assert.Equal("Hello Word", result);
+        }
+
+        [Fact]
+        public void IsPalindrome_True()
+        {
+            // Arrange
+            var strOperations = new StringOperations();
+
+            var result = strOperations.IsPalindrome("ama");
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void IsPalindrome_False() 
+        {
+            // Arrange
+            var strOperations = new StringOperations();
+
+            // Act
+            var result = strOperations.IsPalindrome("love");
+
+            // Assert
+            Assert.False(result);
         }
     }
 }
